@@ -24,13 +24,13 @@ scrape_configs:
 
     # metrics_path defaults to '/metrics'
     # scheme defaults to 'http'.
-
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
     static_configs:
       - targets: ['localhost:9090']
 
   - job_name: 'spring-boot'
 
-    metrics_path: '/prometheus'
-    scrape_interval: 5s
+    metrics_path: '/welcome'
     static_configs:
-      - targets: ['docker.for.mac.localhost:8080']
+      - targets: ['localhost:8080']
