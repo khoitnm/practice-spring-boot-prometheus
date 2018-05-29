@@ -1,10 +1,5 @@
-`springboot-batch-partition-dbinput`: this project will read multiple lines from DB in parallel and then write data into separated csv files.
-Some applied concepts: 
-+ Partition with master-slave steps.
-+ Chunk model with: Reader, Writer, Processor
+The practice with Spring Boot + Prometheus
+Document: https://drive.google.com/open?id=16DUc5KDOgY9bEwXOLhkVrHtKykAfspkHkxGEz3AFKik
+May also has Grafana UI which provides Dashboard UI for Metrics
 
-`springboot-batch-partition-dbinput`: this project will read multiple lines from DB in parallel and then write data into separated csv files.
-Some applied concepts: 
-+ Partition with master-slave steps.
-+ Chunk model with: Reader, Writer, Processor
 
