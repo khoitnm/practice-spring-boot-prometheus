@@ -4,37 +4,6 @@ task wrapper(type: Wrapper) {
 }
 
 //--------------------------------------
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
-dependencies {
-    //Spring Boot
-    compile("org.springframework.boot:spring-boot-starter-web")
-    testCompile("org.springframework.boot:spring-boot-starter-test")
-    testCompile("junit:junit")
-
-    //Prometheus
-    compile "io.prometheus:simpleclient_spring_boot:${prometheusSimpleClientVersion}"
-    compile "io.prometheus:simpleclient_hotspot:${prometheusSimpleClientVersion}"
-    compile "io.prometheus:simpleclient_dropwizard:${prometheusSimpleClientVersion}"
-
-}
-
-bootJar { //Get from gradle.properties
-    baseName = artifactName
-    version =  version
-}
-
-repositories {
-    mavenCentral()
-}
-
 buildscript {
     apply from: "version.gradle"
 
@@ -45,3 +14,34 @@ buildscript {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootGradlePluginVersion}")
     }
 }
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+
+bootJar { //Get from gradle.properties
+    baseName = artifactName
+    version =  version
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    //Spring Boot
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("junit:junit")
+
+    //Micrometer is an abstract layer for integrating to other metrics such as Prometheus.
+    compile "io.micrometer:micrometer-registry-prometheus"
+}
+
