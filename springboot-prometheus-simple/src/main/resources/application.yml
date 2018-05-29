@@ -1,5 +1,10 @@
 management:
+#  endpoint:
+#      prometheus:
+#        enabled: true
   endpoints:
     web:
       exposure:
         include: health, info, httptrace, metrics, threaddump, mappings, prometheus
+  server:
+    port: 9090 #The port for actuator
