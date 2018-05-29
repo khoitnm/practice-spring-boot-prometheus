@@ -1,0 +1,7 @@
+ext.gradleVersion = '4.7'
+//Spring
+ext.springBootVersion = '2.0.2.RELEASE'
+ext.springBootGradlePluginVersion = '2.0.2.RELEASE' //It's the same as springBootVersion
+
+//Others
+ext.prometheusSimpleClientVersion = '0.0.21'

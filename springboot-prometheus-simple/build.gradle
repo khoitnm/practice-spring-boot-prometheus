@@ -1,23 +1,32 @@
+//Gradle Wrapper
 task wrapper(type: Wrapper) {
-    gradleVersion = '4.7'
+    gradleVersion = "${gradleVersion}"
 }
 
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.2.RELEASE")
-    }
-}
-
+//--------------------------------------
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-bootJar {
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    //Spring Boot
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("junit:junit")
+
+    //Prometheus
+    compile "io.prometheus:simpleclient_spring_boot:${prometheusSimpleClientVersion}"
+    compile "io.prometheus:simpleclient_hotspot:${prometheusSimpleClientVersion}"
+    compile "io.prometheus:simpleclient_dropwizard:${prometheusSimpleClientVersion}"
+
+}
+
+bootJar { //Get from gradle.properties
     baseName = artifactName
     version =  version
 }
@@ -26,11 +35,13 @@ repositories {
     mavenCentral()
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+buildscript {
+    apply from: "version.gradle"
 
-dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
-    testCompile("org.springframework.boot:spring-boot-starter-test")
-    testCompile("junit:junit")
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootGradlePluginVersion}")
+    }
 }
