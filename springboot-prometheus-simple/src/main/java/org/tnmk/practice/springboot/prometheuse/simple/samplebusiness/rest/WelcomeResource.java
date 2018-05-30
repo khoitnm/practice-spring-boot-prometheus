@@ -1,4 +1,4 @@
-package org.tnmk.practice.springboot.prometheuse.simple.rest;
+package org.tnmk.practice.springboot.prometheuse.simple.samplebusiness.rest;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,11 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
  * While metrics APIs will be exposed via the port 9090
  */
 @RestController
-public class HelloController {
+public class WelcomeResource {
 
     @RequestMapping(value = {"/", "/welcome"})
-    public String index() {
+    public String welcome() {
         return "Greetings from Spring Boot!";
     }
-
 }
