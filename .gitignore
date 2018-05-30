@@ -7,6 +7,7 @@
 **/build/
 **/out/
 **/outputs/
+**/target/
 
 ### STS ###
 .apt_generated
