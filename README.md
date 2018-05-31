@@ -11,6 +11,6 @@ TODO:
 Additional references:
 + Some good codes to use Metrics: https://www.nurkiewicz.com/2018/01/monitoring-and-measuring-reactive.html
 + https://spring.io/blog/2018/03/16/micrometer-spring-boot-2-s-new-application-metrics-collector
-
++ Slide with very good and short explanation about Metric Concepts (Histogram, SLA...): https://www.slideshare.net/makingx/spring-boot-actuator-20-micrometer 
 My Personal Document (DRAFT): https://drive.google.com/open?id=16DUc5KDOgY9bEwXOLhkVrHtKykAfspkHkxGEz3AFKik
 
