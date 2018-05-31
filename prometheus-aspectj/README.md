@@ -18,7 +18,7 @@ mvn clean install -DskipTests
 Open the browser:
 + Business Logic APIs will be exposed via the port 8080 (by default): 
     + http://localhost:8080/welcome
-    + http://localhost:8080/hotel-file
+    + http://localhost:8080/sample-api
  
 + While metrics APIs will be exposed via the port 9090 (configured in application.yml): 
     + http://localhost:9090/actuator/prometheus >>> this request will show a lot of information, you can see some metrics related to hotel_file there.

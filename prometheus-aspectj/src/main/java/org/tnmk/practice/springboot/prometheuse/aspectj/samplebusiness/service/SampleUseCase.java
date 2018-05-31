@@ -8,20 +8,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
-public class HotelFileLoaderUseCase {
-    private static final Logger logger = LoggerFactory.getLogger(HotelFileLoaderUseCase.class);
+public class SampleUseCase {
+    private static final Logger logger = LoggerFactory.getLogger(SampleUseCase.class);
+    private static final String METRIC_NAME = "sample_use_case_process";
 
-    private final Counter counter = Metrics.counter("hotel_file_loader_use_case_counter");
 
-    @Timed(value = "hotel_file_loader_use_case_process")
-    public String loadHotelFile() {
-        //Count the number of request to this method
-        this.counter.increment();
-
+    @Timed(value = METRIC_NAME, longTask = true, histogram = true, extraTags = {"success", "true"})
+    public String process() {
         stimulateRunningLongTask();
 
-        logger.info("loadHotelFile");
-        return "HotelFileLoader.counter.measure: " + counter.measure().toString();
+        logger.info("SampleUseCase.process");
+        return Metrics.counter(METRIC_NAME+"_seconds", "success", "true").measure().toString();
     }
 
     private void stimulateRunningLongTask() {
