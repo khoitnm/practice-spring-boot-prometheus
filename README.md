@@ -14,4 +14,4 @@ Additional references:
    2. https://spring.io/blog/2018/03/16/micrometer-spring-boot-2-s-new-application-metrics-collector
    3. Slide with very good and short explanation about Metric Concepts (Histogram, SLA...): https://www.slideshare.net/makingx/spring-boot-actuator-20-micrometer 
 My Personal Document (DRAFT): https://drive.google.com/open?id=16DUc5KDOgY9bEwXOLhkVrHtKykAfspkHkxGEz3AFKik
-
+   4. Percentile: https://www.elastic.co/blog/averages-can-dangerous-use-percentile
