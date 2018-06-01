@@ -8,3 +8,11 @@ management:
         include: health, info, httptrace, metrics, threaddump, mappings, prometheus
   server:
     port: 9090 #The port for actuator
+  metrics:
+    binders:
+      jvm:
+        enabled: false
+    distribution:
+      sla:
+        #The keys match with metric name, for example SampleUseCase#METRIC_NAME
+        sample_use_case_process: 11, 101, 501, 1001, 1501, 2001, 3001
