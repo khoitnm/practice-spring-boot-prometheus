@@ -1,6 +1,40 @@
 The practice with Spring Boot + Prometheus
 
-May also has Grafana UI which provides Dashboard UI for Metrics
+# I. Running application:
+
+## 1. Start your application
+You can start either `pro01-simple-metrics` or `pro02-metrics-with-aspectj`
+Those applications have code for measuring running time, the request counts...
+So we can try to trigger some requests to those application by open URL in browser
+``` 
+localhost:8080/sample-api
+``` 
+Refresh it several times so that the requests count will be increased.
+Those metrics numbers will be expose to the URL:
+```
+localhost:9091/actuator/prometheus
+``` 
+
+## 2. Start Prometheus GUI
+```
+cd ./prometheus-gui
+bash start.sh
+```
+
+So our `prometheus-gui` will collect metrics numbers from our applications (e.g. `pro02-metrics-with-aspectj`) via URL `localhost:9091/actuator/prometheus` 
+and store those data in its database. It was configured in `prometheus-gui/premetheus.yml`
+
+After that, you can open the UI on web browser with URL
+```
+localhost:9090/graph 
+```
+
+Then you can explore it, good luck!
+
+# II. Documents
+To understand more about Prometheus, please read more at following links:
+
+Starting guideline: https://prometheus.io/docs/prometheus/latest/getting_started/
 
 TODO:
 + Counts per second/minute/hour: https://stackoverflow.com/questions/26038298/what-does-minute-rates-of-both-timer-and-meter-metrics-indicates, https://reflectoring.io/monitoring-error-rate-spring-boot/
