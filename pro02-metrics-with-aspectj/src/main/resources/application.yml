@@ -7,7 +7,7 @@ management:
       exposure:
         include: health, info, httptrace, metrics, threaddump, mappings, prometheus
   server:
-    port: 9090 #The port for actuator
+    port: 9091 #The port for actuator
   metrics:
     binders:
       jvm:

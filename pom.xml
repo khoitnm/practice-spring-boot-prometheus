@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.tnmk.practice</groupId>
-    <artifactId>spring-boot-prometheus</artifactId>
+    <artifactId>practice-spring-prometheus</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>prometheus-rest</module>
-        <module>prometheus-aspectj</module>
+        <module>pro01-simple-metrics</module>
+        <module>pro02-metrics-with-aspectj</module>
     </modules>
 
 </project>
