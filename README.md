@@ -25,8 +25,8 @@ cd ./prometheus-gui
 bash start.sh
 ```
 
-So our `prometheus-gui` will collect metrics numbers from our applications (e.g. `pro02-metrics-with-aspectj`) via URL `localhost:9091/actuator/prometheus` 
-and store those data in its database. It was configured in `prometheus-gui/premetheus.yml`
+Our `prometheus-gui` will collect metrics numbers from our applications (e.g. `pro02-metrics-with-aspectj`) via URL `localhost:9091/actuator/prometheus` 
+and store those data in its database. It is configured in `prometheus-gui/premetheus.yml`
 
 After that, you can open the UI on web browser with URL
 ```
