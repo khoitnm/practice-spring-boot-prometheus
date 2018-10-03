@@ -4,15 +4,19 @@ The practice with Spring Boot + Prometheus
 
 ## 1. Start your application
 You can start either `pro01-simple-metrics` or `pro02-metrics-with-aspectj`
+
+For example, we start the `pro02-metrics-with-aspectj`:
 Those applications have code for measuring running time, the request counts...
 So we can try to trigger some requests to those application by open URL in browser
 ``` 
-localhost:8080/sample-api
+localhost:8082/sample-api
 ``` 
+The port is configured in `pro02-metrics-with-aspectj/src/main/resources/application.yml`
+
 Refresh it several times so that the requests count will be increased.
 Those metrics numbers will be expose to the URL:
 ```
-localhost:9091/actuator/prometheus
+localhost:9092/actuator/prometheus
 ``` 
 
 ## 2. Start Prometheus GUI

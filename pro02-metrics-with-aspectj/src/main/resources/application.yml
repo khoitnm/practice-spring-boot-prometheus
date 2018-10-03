@@ -1,3 +1,4 @@
+server.port: 8082
 management:
 #  endpoint:
 #      prometheus:
@@ -7,7 +8,7 @@ management:
       exposure:
         include: health, info, httptrace, metrics, threaddump, mappings, prometheus
   server:
-    port: 9091 #The port for actuator
+    port: 9092 #The port for actuator
   metrics:
     binders:
       jvm:
