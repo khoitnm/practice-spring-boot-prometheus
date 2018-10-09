@@ -11,6 +11,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Random;
+
 @Service
 public class SampleUseCase {
     private static final Logger logger = LoggerFactory.getLogger(SampleUseCase.class);
@@ -19,13 +21,14 @@ public class SampleUseCase {
     @Autowired
     private MeterRegistry meterRegistry;
 
-    @Timed(value = METRIC_NAME, extraTags = {"success", "true"},
-            longTask = true,
-            histogram = true,
+    //This @Timed annotation will also count the number of times this method is triggered.
+    @Timed(value = METRIC_NAME, extraTags = {"success", "true"}
+            ,longTask = true
+            ,histogram = true
 
             // Read this to understand more about percentiles: https://www.elastic.co/blog/averages-can-dangerous-use-percentile
             // Important: percentiles is very expensive for calculation, please only use it when necessary.
-            percentiles = {0.1, 0.5, 0.95, 0.99}
+            ,percentiles = {0.1, 0.5, 0.95, 0.99}
     )
     public String process() {
         stimulateRunningLongTask();
@@ -42,7 +45,8 @@ public class SampleUseCase {
 
     private void stimulateRunningLongTask() {
         try {
-            Thread.sleep(1000);
+            long runTime = new Random().nextInt(3000);
+            Thread.sleep(runTime);
         } catch (InterruptedException e) {
             logger.error(e.getMessage(), e);
         }
