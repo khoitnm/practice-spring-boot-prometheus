@@ -16,7 +16,7 @@ The port is configured in `pro02-metrics-with-aspectj/src/main/resources/applica
 Refresh it several times so that the requests count will be increased.
 Those metrics numbers will be expose to the URL:
 ```
-localhost:9092/actuator/prometheus
+localhost:9292/actuator/prometheus
 ``` 
 
 ## 2. Start Prometheus GUI
