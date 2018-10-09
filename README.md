@@ -88,9 +88,9 @@ The class `org.tnmk.practice.springboot.prometheuse.aspectj.samplebusiness.servi
 Additional references:
    1. Some good codes to use Metrics: https://www.nurkiewicz.com/2018/01/monitoring-and-measuring-reactive.html
    2. https://spring.io/blog/2018/03/16/micrometer-spring-boot-2-s-new-application-metrics-collector
-   3. Slide with very good and short explanation about Metric Concepts (Histogram, SLA...): https://www.slideshare.net/makingx/spring-boot-actuator-20-micrometer 
-My Personal Document (DRAFT): https://drive.google.com/open?id=16DUc5KDOgY9bEwXOLhkVrHtKykAfspkHkxGEz3AFKik
-   4. Percentile: https://www.elastic.co/blog/averages-can-dangerous-use-percentile
+   3. Slide with very good and short explanation about Metric Concepts (Histogram, SLA...): https://www.slideshare.net/makingx/spring-boot-actuator-20-micrometer
+   4. My Personal Document (DRAFT): https://drive.google.com/open?id=16DUc5KDOgY9bEwXOLhkVrHtKykAfspkHkxGEz3AFKik
+   5. Percentile: https://www.elastic.co/blog/averages-can-dangerous-use-percentile
 
 # III. TODO
 + Counts per second/minute/hour: https://stackoverflow.com/questions/26038298/what-does-minute-rates-of-both-timer-and-meter-metrics-indicates, https://reflectoring.io/monitoring-error-rate-spring-boot/
