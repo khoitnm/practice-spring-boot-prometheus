@@ -94,7 +94,7 @@ Additional references:
 
 # III. TODO
 + Counts per second/minute/hour: https://stackoverflow.com/questions/26038298/what-does-minute-rates-of-both-timer-and-meter-metrics-indicates, https://reflectoring.io/monitoring-error-rate-spring-boot/
-+ Running time for the whole flow with async requests: https://www.nurkiewicz.com/2018/01/monitoring-and-measuring-reactive.html (by create (lazily) a new Context object)
++ Running time for the whole flow with async requests: https://www.nurkiewicz.com/2018/01/monitoring-and-measuring-reactive.html (by creating (lazily) a new Context object)
 + How many 200-like and 500-like response occurred: https://touk.pl/blog/2018/03/05/spring-boot-2-0-http-request-metrics-with-micrometer/
 + Response time statistics: mean, median, percentiles
 + SLA (view slide [3] to understand the concept): https://spring.io/blog/2018/03/16/micrometer-spring-boot-2-s-new-application-metrics-collector
