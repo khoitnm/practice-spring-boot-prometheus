@@ -1,17 +1,13 @@
 package org.tnmk.practice.springboot.prometheuse.aspectj.samplebusiness.service;
 
 import io.micrometer.core.annotation.Timed;
-import io.micrometer.core.instrument.Counter;
 import io.micrometer.core.instrument.Meter;
 import io.micrometer.core.instrument.MeterRegistry;
-import io.micrometer.core.instrument.Metrics;
-import io.micrometer.core.instrument.search.Search;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.Random;
+import org.tnmk.practice.springboot.prometheuse.aspectj.samplebusiness.service.helper.DoSomethingHelper;
 
 import static org.tnmk.practice.springboot.prometheuse.aspectj.metrics.MetricConstants.METRIC_NAME;
 import static org.tnmk.practice.springboot.prometheuse.aspectj.metrics.MetricConstants.TAG_NAME_STATUS;
@@ -34,7 +30,7 @@ public class SampleUseCase {
             ,percentiles = {0.1, 0.5, 0.95, 0.99}
     )
     public String process() {
-        stimulateRunningLongTask();
+        DoSomethingHelper.doInRandomSeconds(3);
 
         logger.info("SampleUseCase.process");
 
@@ -46,12 +42,4 @@ public class SampleUseCase {
         }
     }
 
-    private void stimulateRunningLongTask() {
-        try {
-            long runTime = new Random().nextInt(3000);
-            Thread.sleep(runTime);
-        } catch (InterruptedException e) {
-            logger.error(e.getMessage(), e);
-        }
-    }
 }
