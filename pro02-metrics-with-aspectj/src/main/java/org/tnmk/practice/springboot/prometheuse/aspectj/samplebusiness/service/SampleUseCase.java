@@ -13,16 +13,19 @@ import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
+import static org.tnmk.practice.springboot.prometheuse.aspectj.metrics.MetricConstants.METRIC_NAME;
+import static org.tnmk.practice.springboot.prometheuse.aspectj.metrics.MetricConstants.TAG_NAME_STATUS;
+import static org.tnmk.practice.springboot.prometheuse.aspectj.metrics.MetricConstants.TAG_VALUE_STATUS_SUCCESS;
+
 @Service
 public class SampleUseCase {
     private static final Logger logger = LoggerFactory.getLogger(SampleUseCase.class);
-    private static final String METRIC_NAME = "sample_use_case_process";
 
     @Autowired
     private MeterRegistry meterRegistry;
 
     //This @Timed annotation will also count the number of times this method is triggered.
-    @Timed(value = METRIC_NAME, extraTags = {"success", "true"}
+    @Timed(value = METRIC_NAME, extraTags = {TAG_NAME_STATUS, TAG_VALUE_STATUS_SUCCESS}
             ,longTask = true
             ,histogram = true
 
